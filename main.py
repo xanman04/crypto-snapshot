@@ -2,7 +2,7 @@ import data.source as src
 from dataclasses import asdict
 import argparse, json
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser(description="Fetch a 24h rolling ticker snapshot via CCXT")
     parser.add_argument('-x', '--exchange', default="binance", 
                         help="Exchange, e.g. binance/cryptocom/coinbase (See CCXT docs for available exchanges)")
@@ -72,3 +72,6 @@ if __name__ == '__main__':
     else:
         for i,j in asdict(s).items():
             print(f'{i} : {j}')
+
+if __name__ == '__main__':
+    main()
